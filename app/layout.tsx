@@ -4,6 +4,8 @@ import "./globals.css";
 import React from "react";
 import Link from "next/link";
 
+import Nav from "@/components/navigation/nav";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,16 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <nav>
-            <ul className="flex gap-2 justify-between px-4 bg-blue-700">
-              <li>
-                <Link href = {"/"}>Home</Link>
-              </li>
-              <li> 
-                <Link href = {"/about"}>About</Link>
-              </li>
-            </ul>
-          </nav>
+          <Nav />
         {children}
         {isAdmin && profile}
       </body>
